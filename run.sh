@@ -7,7 +7,10 @@
 #   - DOCLING_SERVE_ARTIFACTS_PATH
 
 if [ "$1" = "dev" ]; then
-    python3 docling-serve dev
+    python3 docling_serve dev
+elif [ "$1" = "prod" ]; then
+    python3 docling_serve run
 else
-    python3 docling-serve run
+    echo "Usage: $0 [dev|prod]"
+    exit 1
 fi
